@@ -1,1 +1,69 @@
-h1 
+body {
+  font-family:Arial,Helvettica,sans-serif;
+  background-color: darkgrey;
+  width:85%;
+  margin:auto;
+  padding:auto;
+  font-size: 20px;
+  height: 65%;
+ }
+
+ header {
+  width:85%;
+  background-color:black;
+  color:white;
+  margin-right:auto;
+  margin-left:auto;
+  padding:10px;
+  overflow:hidden;
+ }
+ h1 {
+  font-size:2em;
+  margin:0;
+  padding:0;
+  padding-top:10px;
+  text-shadow: 3px 2px Salmon;
+  text-align: center;
+ }
+ 
+ h2 {
+  font-size:1.2em;
+  margin-top:10px;
+  margin-bottom: 0px;
+  text-shadow: 2px 1px black;
+ }
+ 
+
+ footer h4 {
+  font-family:Arial,Helvettica,sans-serif;
+   color: orange;
+   text-shadow: 2px 1px black;
+ }
+span {
+  font-size: 15px;
+  margin:0;
+  margin-bottom: 0px;
+}
+ p #demo {font-size: 20px;}
+/* #id*/
+ul #proList{list-style-position: inside}
+/* .class */
+li.item{list-style:none; padding:5px;}
+section { width:80%;
+height: 75%;}
+
+footer {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 15px;
+  text-align: center;
+  color: brown;
+	list-style-type: none;
+	margin-bottom:10px;
+  margin-top:0;
+  text-shadow: 1px 1px black;
+}
+
+.top {
+background-color: steelblue;
+margin-top:5px;
+}
