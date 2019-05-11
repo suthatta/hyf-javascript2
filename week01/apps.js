@@ -1,20 +1,27 @@
 "use strict";
 //create a list
 let myFavoriteBooks = ['its_about_a_boy', "harry_potter_and_the_sorcerers_stone",
-  "docter_glas", "game_of_throne_season1", "the_lord_of_the_rings",
+  "doctor_glas", "game_of_throne_season1", "the_lord_of_the_rings",
   "jane_eyre", "little_women", "the_hobbit", "baby_massage", "svenska_kok_book"];
 
 //create function ul
 function myBooksList(listOfBooks) {
+  let divListOfBooks = document.createElement('div');
+  //divListOfBooks.innerHTML('List Of Book : Array');
+  //.getElementById("listOfBooks").appendChild(div);
   let listView = document.createElement('ul');
   for (let i = 0; i < listOfBooks.length; i++) {
     let listViewItem = document.createElement('li');
+    listViewItem.innerText = listOfBooks[i];
     listViewItem.appendChild(document.createTextNode(listOfBooks[i]));
+    // listViewItem.appendChild(document.createTextNode(listOfBooks[i]));
     listView.appendChild(listViewItem);
   }
   return listView;
 }
+
 document.getElementById("listOfBooks").appendChild(myBooksList(myFavoriteBooks));
+
 
 //Make an object (not an array!) properties: title, language and author.
 let myBooks = function (id, tittle, language, author) {
@@ -55,15 +62,15 @@ let myBooksItem = {
 function bookObject(bookObject) {
   let objBookList = document.createElement('div');
   let bookId = document.createElement('span');
-  let bookTittle = document.createElement('span');
+  let bookTitle = document.createElement('span');
   let bookLanguage = document.createElement('span');
   let bookAuthor = document.createElement('span');
 
   objBookList.appendChild(document.createTextNode(bookObject.myBooks + ":  "));
   bookId.appendChild(document.createTextNode("BooksID: " + bookObject.id + ": "));
   objBookList.appendChild(bookId);
-  bookTittle.appendChild(document.createTextNode("Books Tittle: " + bookObject.tittle + ": "));
-  objBookList.appendChild(bookTittle);
+  bookTitle.appendChild(document.createTextNode("Books Title: " + bookObject.title + ": "));
+  objBookList.appendChild(bookTitle);
   bookLanguage.appendChild(document.createTextNode("Language: " + bookObject.language + " : "));
   objBookList.appendChild(bookLanguage);
   bookAuthor.appendChild(document.createTextNode("Author: " + bookObject.author));
@@ -76,48 +83,74 @@ for (let i = 0; i < arrayOfBooks.length; i++) {
 }
 
 //Select book by print out book by using bookID code
+/*
 function checkInventory(scannedItem) {
   return myBooksItem[scannedItem];
 }
 document.write(myBooksItems["book01"]);
 document.write(Object.keys(myBooksItem));
+*/
 
 //1.7 book cover object
-
-
-
 let booksCover = {
-  book01: "https://images.gr-assets.com/books/1388854183l/4269.jpg",
-  book02: "https://s2.adlibris.com/images/1357785/a-game-of-thrones-a-song-of-ice-and-fire-book-one.jpg",
-  book03: "https://image.bokus.com/images/9789174290936_200x_doktor-glas_pocket",
-  book04: "https://s2.adlibris.com/images/1357785/a-game-of-thrones-a-song-of-ice-and-fire-book-one.jpg",
-  book05: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz8IUo79wsCBiyDzO9scXb5X16uAOKa1GDoKfSHpMSEg_L4eZb"
-  /*//its_about_a_boy https://images.gr-assets.com/books/1388854183l/4269.jpg
-  // "the_lord_of_the_rings" https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSZs8ZibauBY92dwcU2Oyf7rnj1_f6Ez5vTFhqZ2ze6A925ztv2tK47lUgKn9UG4QlBZ4vWKs1R&usqp=CAc
-  //"jane_eyre" https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRVQq26aS5fKj-aukyI2h391ei5I8aEmdUMsOaX67NHdRcxKR1DSyG6ZUDVOkm96xAniqXW58Gr&usqp=CAc
-  //"little_women"https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRApj8agzUIMcqpBplW1DUSHDI-Eau93txF2spuCV26LEWGEDbA5onKLP_5vhOS8oE5uOq4Frc&usqp=CAc 
-  //"the_hobbit" https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQnf693B1VNd9deY7J33lp0-MP4eq3blPzs-gmo_FWbFQJOUH6xPA7Wge2m779WQTC7m3I6ni05&usqp=CAc
-  //"baby_massage" https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRmv77-kNA895IwxiloKD3Ar6597pc5XogVJ4d6S54FNfEqPn25&usqp=CAc
-  //, "svenska_kok_book" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4PMqR-ru1RtBtT-pwCeU_HAnKM7jkNnpNnxT55S8LnIh5l2jm
-  */
+  book01: {
+    link: "https://images.gr-assets.com/books/1388854183l/4269.jpg",
+    title: 'its_about_a_boy'
+  },
+  book02: {
+    link: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz8IUo79wsCBiyDzO9scXb5X16uAOKa1GDoKfSHpMSEg_L4eZb",
+    title: 'harry_potter_and_the_sorcerers_stone'
+  },
+  book03: { link: "https://image.bokus.com/images/9789174290936_200x_doktor-glas_pocket", title: 'doctor_glas' },
+  book04: {
+    link: "https://s2.adlibris.com/images/1357785/a-game-of-thrones-a-song-of-ice-and-fire-book-one.jpg",
+    title: 'game_of_throne_season1'
+  },
+  book05: {
+    link: "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_UX182_CR0,0,182,268_AL_.jpg",
+    title: 'the_lord_of_the_rings'
+  },
+  book06: {
+    link: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh3sRjmqhT84Pv-tE0tzGihbFeeI4YnVWM0U1OcqPn4UlUSb8f",
+    title: 'jane_eyre'
+  },
+  book07: {
+    link: 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSZs8ZibauBY92dwcU2Oyf7rnj1_f6Ez5vTFhqZ2ze6A925ztv2tK47lUgKn9UG4QlBZ4vWKs1R&usqp=CAc',
+    title: 'little_women'
+  },
+  book08: {
+    link: 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQnf693B1VNd9deY7J33lp0-MP4eq3blPzs-gmo_FWbFQJOUH6xPA7Wge2m779WQTC7m3I6ni05&usqp=CAc',
+    title: 'the_hobbit'
+  },
+  book09: {
+    link: 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRmv77-kNA895IwxiloKD3Ar6597pc5XogVJ4d6S54FNfEqPn25&usqp=CAc',
+    title: 'baby_massage'
+  },
+  book10: {
+    link: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4PMqR-ru1RtBtT-pwCeU_HAnKM7jkNnpNnxT55S8LnIh5l2jm',
+    title: 'svenska_kok_book'
+  }
 }
+
 
 //create function cover
-/* 1.8 Loop over these entries (hint: Object.keys(objectName) gives you an array containing the keys).
-Then write a function which places an image at the corresponding li element. Remember that objects are
-not ordered, so you cannot guarantee that the first key is the first li element. (Hint: you could give each
-  li item an id tag by modifying the function you made before.)*/
+function printImg() {
+  let addHere = document.getElementById('addHere');
+  for (let items of Object.keys(booksCover)) {
+    let newDiv = document.createElement('div');
+    let newImg = document.createElement('img');
+    newDiv.className = 'addedClass';
+    let textHere = document.createTextNode(booksCover[items].title);
+    newDiv.appendChild(textHere);
+    newImg.setAttribute('src', booksCover[items].link);
+    addHere.appendChild(newDiv);
+    addHere.appendChild(newImg);
 
-function myBooksCover(listCover) {
-  let coverView = document.createElement('ul');
-  for (let i = 0; i < listCover.length; i++) {
-    let coverViewItem = document.createElement('li');
-    coverViewItem.appendChild(document.createTextNode(listCover[i]));
-    coverView.appendChild(coverViewItem);
   }
-  return coverView;
+
 }
-document.getElementById("listOfCover").appendChild(myBooksCover(Object.keys(booksCover)));
+
+printImg();
 
 
 
