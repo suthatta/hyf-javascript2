@@ -46,12 +46,11 @@ span {
 }
  p #demo {font-size: 20px;}
 /* #id*/
-ul #proList{list-style-position: inside}
+ul {list-style-position: inside}
 /* .class */
-li.item{list-style:none; padding:5px;}
-section { width:80%;
-height: 75%;}
-
+li {list-style:none; padding:5px;
+font-size: 12px;
+margin-botton:0;}
 footer {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 15px;
@@ -61,9 +60,30 @@ footer {
 	margin-bottom:10px;
   margin-top:0;
   text-shadow: 1px 1px black;
+  width:85%;
 }
 
 .top {
 background-color: steelblue;
 margin-top:5px;
+}
+
+img {
+  width:80px;
+  height: 80;
+}
+div .addHereClass{
+  display: grid;
+  grid-template-columns: auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+  font-size:10px;
+grid-gap: 0.5rem 1rem;
+padding-left:0px;
+padding-left:10px;
+}
+#addHere li:nth-child(even){
+  background-color: cadetblue;
+  border-block-end-width: 15px;
+  border-color:white;
 }
