@@ -72,18 +72,17 @@ img {
   width:80px;
   height: 80;
 }
-div .addHereClass{
-  display: grid;
-  grid-template-columns: auto auto;
-  background-color: #2196F3;
-  padding: 10px;
-  font-size:10px;
-grid-gap: 0.5rem 1rem;
-padding-left:0px;
-padding-left:10px;
+
+#grid-flex{
+  display: flex;
+  flex-wrap:wrap;
+  background-color: #F2F2F2;
+  grid-template-columns: repeat(4, 1fr);
+  padding-left:0px;
+  padding-left:10px;
+  grid-gap: 0.5rem 1rem;
+  
 }
-#addHere li:nth-child(even){
-  background-color: cadetblue;
-  border-block-end-width: 15px;
-  border-color:white;
-} 
+#grid-flex > li.grid-item {
+  flex-basis:25%;
+}
