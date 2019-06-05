@@ -5,13 +5,21 @@ const arr3d = [[[1, 2], [3, 4]], [[5, 6], [7, 8]]];
 
 function flattenArray2d(arr) {
   // Replace this comment and the next line with your code
-
+  arr.reduce(function (accumulator, currentValue) {
+    return accumulator.concat(currentValue);
+  }, []);
   console.log(arr);
 }
-
+/*function flatten(arr) {
+  return arr.reduce(function (flat, toFlatten) {
+    return flat.concat(Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten);
+  }, []);
+}*/
 function flattenArray3d(arr) {
   // Replace this comment and the next line with your code
-
+  arr.reduce(function (accumulator, currentValue) {
+    return accumulator.concat(currentValue);
+  }, []);
   console.log(arr);
 }
 
