@@ -2,11 +2,18 @@
 
 function createBase(base) {
   // Replace this comment and the next line with your code
+  function addY(y) {
+    return base + y;
+  }
+  base = addY(0);
   console.log(base);
+  return addY;
 }
 
-const addSix = createBase(6);
 
+
+let addSix = createBase(6); //
+//console.log(typeof addSix);
 console.log(addSix(10)); // returns 16
 console.log(addSix(21)); // returns 27
 
