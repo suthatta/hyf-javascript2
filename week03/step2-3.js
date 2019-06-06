@@ -6,7 +6,7 @@ function repeatStringNumTimesWithFor(str, num) {
   let result = '';
 
   // Replace this comment and the next line with your code
-  for (let i = 0; i <= num; i++) {
+  for (let i = 1; i <= num; i++) {// or for( let i = num; i <=0; i --)
     result += str;
   }
   console.log(str, num, result);
