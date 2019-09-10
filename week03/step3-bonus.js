@@ -19,3 +19,15 @@ console.log(uniqueValues);
 
 // Do not change or remove anything below this line
 module.exports = makeUnique;
+
+/*
+function makeUnique(arr) {
+  const fliterArray = () => {
+    return [...new Set(arr)]
+  }
+  return fliterArray();
+}
+makeUnique(values)
+
+console.log(makeUnique(values));
+*/
